@@ -1,38 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { Post } from "../Post/index";
 import { PostForm } from "../PostForm/index";
-
-export type PostType = {
-  id: number;
-  title: string;
-};
+import { AppContext } from "../Context/AppContext";
 
 export const PostList = () => {
-  const [posts, setPosts] = useState<PostType[]>([]);
-
-  const getPosts = async () => {
-    try {
-      const res = await fetch("https://dummyjson.com/posts");
-
-      if (!res.ok) throw new Error("Cannot fetch posts!");
-
-      const { posts } = await res.json();
-
-      if (posts) setPosts(posts);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const addPost = (post: PostType) => setPosts((prev) => [...prev, post]);
-
-  useEffect(() => {
-    getPosts();
-  }, []);
+  const { posts } = useContext(AppContext);
 
   return posts.length > 0 ? (
     <>
-      <PostForm addPost={addPost} />
+      <PostForm />
       <ul>
         {posts.map((post) => (
           <Post key={post.id} {...post} />
