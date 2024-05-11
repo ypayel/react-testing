@@ -6,6 +6,8 @@ import { Nav } from "./Pages/Nav/nav";
 import { Settings } from "./Pages/Settings/settings";
 import { UserList } from "./Pages/UserList/userList";
 import { User } from "./Pages/User/user";
+import { Blog } from "./Pages/Blog/blog";
+import { PostBlog } from "./Pages/PostBlog/post";
 
 // <Route path="userlist/:userID" element = { <User />} />  - takie jest zagniezdzenie elementow 
 
@@ -22,6 +24,8 @@ function App() {
           <Route path="settings" element = { <Settings />} />
           <Route path="userlist" element = { <UserList />} />
           <Route path="userlist/:userID" element = { <User />} />
+          <Route path="blog" element = { <Blog/>} />
+          <Route path="blog/:postID" element = { < PostBlog />} />
         </Routes>
     </div>
   );

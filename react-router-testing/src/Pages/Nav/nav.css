@@ -1,3 +1,3 @@
-nav > .active {
-    color: brown;
+nav li> .active {
+    color: red;
 }
