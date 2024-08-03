@@ -9,7 +9,7 @@ import { User } from "./Pages/User/user";
 import { Blog } from "./Pages/Blog/blog";
 import { PostBlog } from "./Pages/PostBlog/post";
 
-// <Route path="userlist/:userID" element = { <User />} />  - takie jest zagniezdzenie elementow 
+
 
 
 
